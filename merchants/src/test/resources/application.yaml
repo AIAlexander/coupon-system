@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: AlexMerchants
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/passbook?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: toor
+  kafka:
+    bootstrap-servers: 127.0.0.1:9092
+    consumer:
+      group-id: passbook
+    listener:
+      concurrency: 4
+server:
+  port: 9527
+
+logging:
+
+  file: log/alex-merchants.log
