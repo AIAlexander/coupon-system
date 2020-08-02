@@ -11,7 +11,7 @@ public enum PassStatus {
     USED(2, "已经使用的"),
     ALL(3, "全部领取的");
 
-    //状态吗
+    //状态码
     private Integer code;
 
     //状态描述

@@ -19,6 +19,44 @@ public class Constants {
     //用户数的redis key
     public static final String USE_COUNT_REDIS_KEY = "user-count";
 
+    // HBase User相关常量
+    public static byte[] USER_FAMILY_B = Constants.UserTable.FAMILY_B.getBytes();
+    public static byte[] USER_NAME = Constants.UserTable.NAME.getBytes();
+    public static byte[] USER_AGE = Constants.UserTable.AGE.getBytes();
+    public static byte[] USER_SEX = Constants.UserTable.SEX.getBytes();
+    public static byte[] USER_FAMILY_O = Constants.UserTable.FAMILY_O.getBytes();
+    public static byte[] USER_PHONE = Constants.UserTable.PHONE.getBytes();
+    public static byte[] USER_ADDRESS = Constants.UserTable.ADDRESS.getBytes();
+
+    //HBase PassTemplate相关常量
+    public static byte[] PT_FAMILY_B = Constants.PassTemplateTable.FAMILY_B.getBytes();
+    public static byte[] PT_ID = Constants.PassTemplateTable.ID.getBytes();
+    public static byte[] PT_TITLE = Constants.PassTemplateTable.TITLE.getBytes();
+    public static byte[] PT_SUMMARY = Constants.PassTemplateTable.SUMMARY.getBytes();
+    public static byte[] PT_DESC = Constants.PassTemplateTable.DESC.getBytes();
+    public static byte[] PT_HAS_TOKEN = Constants.PassTemplateTable.HAS_TOKEN.getBytes();
+    public static byte[] PT_BACKGROUND = Constants.PassTemplateTable.BACKGROUND.getBytes();
+    public static byte[] PT_FAMILY_C = Constants.PassTemplateTable.FAMILY_C.getBytes();
+    public static byte[] PT_LIMIT = Constants.PassTemplateTable.LIMIT.getBytes();
+    public static byte[] PT_START = Constants.PassTemplateTable.START.getBytes();
+    public static byte[] PT_END = Constants.PassTemplateTable.END.getBytes();
+
+    //HBase Pass相关常量
+    public static byte[] P_FAMILY_I = Constants.PassTable.FAMILY_I.getBytes();
+    public static byte[] P_USER_ID = Constants.PassTable.USER_ID.getBytes();
+    public static byte[] P_TEMPLATE_ID = Constants.PassTable.TEMPLATE_ID.getBytes();
+    public static byte[] P_TOKEN = Constants.PassTable.TOKEN.getBytes();
+    public static byte[] P_ASSIGNED_DATE = Constants.PassTable.ASSIGNED_DATE.getBytes();
+    public static byte[] P_CON_DATE = Constants.PassTable.CON_DATE.getBytes();
+
+    //HBase Feedback相关常量
+    public static byte[] F_FAMILY_I = Constants.FeedbackTable.FAMILY_I.getBytes();
+    public static byte[] F_USER_ID = Constants.FeedbackTable.USER_ID.getBytes();
+    public static byte[] F_TEMPLATE_ID = Constants.FeedbackTable.TEMPLATE_ID.getBytes();
+    public static byte[] F_TYPE = Constants.FeedbackTable.TYPE.getBytes();
+    public static byte[] F_COMMENT = Constants.FeedbackTable.COMMENT.getBytes();
+
+
     /**
      * <h2>User HBase Table</h2>
      */
@@ -64,8 +102,11 @@ public class Constants {
         //优惠券标题
         public static final String TITLE = "title";
 
-        //优惠券详细信息
+        //优惠券摘要
         public static final String SUMMARY = "summary";
+
+        //优惠券的详细信息
+        public static final String DESC = "desc";
 
         //优惠券是否有token
         public static final String HAS_TOKEN = "has_token";
@@ -136,5 +177,7 @@ public class Constants {
         //评论内容
         public static final String COMMENT = "comment";
     }
+
+
 
 }
