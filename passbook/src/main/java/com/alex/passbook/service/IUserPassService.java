@@ -12,7 +12,7 @@ import com.alex.passbook.vo.Response;
 public interface IUserPassService {
 
     /**
-     * <h2>获取用户已领取的优惠券（我的优惠券）</h2>
+     * <h2>获取用户未使用的优惠券（我的优惠券）</h2>
      * @param userId 用户id
      * @return {@link Response}
      */

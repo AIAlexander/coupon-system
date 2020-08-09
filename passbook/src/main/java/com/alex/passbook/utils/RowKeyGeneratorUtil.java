@@ -1,6 +1,7 @@
 package com.alex.passbook.utils;
 
 import com.alex.passbook.vo.FeedbackVo;
+import com.alex.passbook.vo.GainPassTemplateRequest;
 import com.alex.passbook.vo.PassTemplateVo;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.codec.digest.DigestUtils;
@@ -48,6 +49,21 @@ public class RowKeyGeneratorUtil {
         String rowKey = new StringBuilder(String.valueOf(feedbackVo.getUserId())).reverse().toString() +
                 (Long.MAX_VALUE - System.currentTimeMillis());
         log.info("getFeedbackRowKey: {}, {}", feedbackVo, rowKey);
+        return rowKey;
+    }
+
+    /**
+     * 根据提供的领取优惠券请求生成RowKey，在用户领取优惠券时候使用
+     * Pass RowKey = reverse(userId) + (Long.Max - timestamp) + PassTemplate RowKey
+     * 前两个部分的设计与FeedBack相同，后面加上PassTemplate的rowKey是便于查询哪些用户领取过相同的优惠券，可以通过后缀的Scan来进行扫描
+     * @param request {@link GainPassTemplateRequest}
+     * @return String rowKey
+     */
+    public static String getPassRowKey(GainPassTemplateRequest request){
+        String rowKey = new StringBuilder(String.valueOf(request.getUserId())).reverse().toString() +
+                (Long.MAX_VALUE - System.currentTimeMillis()) +
+                getPassTemplateRowKey(request.getPassTemplateVo());
+        log.info("getPassRowKey when getting the pass : {}, {}", request, rowKey);
         return rowKey;
     }
 }
