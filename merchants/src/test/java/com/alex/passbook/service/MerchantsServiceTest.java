@@ -49,14 +49,14 @@ public class MerchantsServiceTest {
     @Test
     public void testDropPassTemplate(){
         PassTemplate passTemplate = new PassTemplate();
-        passTemplate.setId(18);
-        passTemplate.setTitle("title: 麦当劳");
-        passTemplate.setSummary("简介: 麦当劳优惠券");
-        passTemplate.setDesc("详情: 麦当劳优惠券");
+        passTemplate.setId(20);
+        passTemplate.setTitle("肯德基");
+        passTemplate.setSummary("简介: 肯德基优惠券");
+        passTemplate.setDesc("详情: 肯德基优惠券");
         passTemplate.setLimit(10000L);
-        passTemplate.setHasToken(false);
+        passTemplate.setHasToken(true);
         passTemplate.setBackground(2);
-        passTemplate.setStart(new Date());
+        passTemplate.setStart(DateUtils.addDays(new Date(), -10));
         passTemplate.setEnd(DateUtils.addDays(new Date(), 10));
         System.out.println(JSON.toJSONString(merchantsService.dropPassTemplate(passTemplate)));
     }

@@ -183,7 +183,7 @@ public class UserPassServiceImpl implements IUserPassService {
                 PassTemplateVo::getId
         ).collect(Collectors.toList());
         //通过PassTemplate的id在数据库中查询相关的商户
-        List<Merchants> merchants = merchantsDao.findByIds(merchantsIds);
+        List<Merchants> merchants = merchantsDao.findByIdIn(merchantsIds);
         merchants.forEach(m -> merchantsMap.put(m.getId(), m));
         return merchantsMap;
     }

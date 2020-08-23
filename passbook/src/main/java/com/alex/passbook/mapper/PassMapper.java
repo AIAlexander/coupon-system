@@ -31,7 +31,7 @@ public class PassMapper implements RowMapper<PassVo> {
             passVo.setConDate(DateUtils.parseDate(conDateStr, patterns));
         }
 
-        passVo.setRowKey(result.getRow().toString());
-        return null;
+        passVo.setRowKey(Bytes.toString(result.getRow()));
+        return passVo;
     }
 }

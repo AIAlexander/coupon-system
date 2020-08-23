@@ -10,8 +10,6 @@ import lombok.NoArgsConstructor;
  * <h1>Controller通用返回对象</h1>
  */
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class Response {
 
     /** 错误码：正确返回0 */
@@ -22,6 +20,15 @@ public class Response {
 
     /** 返回对象 */
     private Object data;
+
+    public Response() {
+    }
+
+    public Response(Integer errorCode, String errorMsg, Object data) {
+        this.errorCode = errorCode;
+        this.errorMsg = errorMsg;
+        this.data = data;
+    }
 
     /**
      * 正确信息的返回对象的构造函数

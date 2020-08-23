@@ -37,6 +37,7 @@ public class InventoryServiceImpl implements IInventorySevice {
     @Autowired
     private MerchantsDao merchantsDao;
 
+    @Autowired
     private IUserPassService userPassService;
 
     @Override
@@ -93,7 +94,7 @@ public class InventoryServiceImpl implements IInventorySevice {
         List<Integer> merchantsIds = passTemplateVos.stream().map(
                 PassTemplateVo::getId
         ).collect(Collectors.toList());
-        List<Merchants> merchants = merchantsDao.findByIds(merchantsIds);
+        List<Merchants> merchants = merchantsDao.findByIdIn(merchantsIds);
         merchants.forEach(m -> merchantsMap.put(m.getId(), m));
         List<PassTemplateInfoVo> result = new ArrayList<>(passTemplateVos.size());
         for (PassTemplateVo passTemplateVo : passTemplateVos) {

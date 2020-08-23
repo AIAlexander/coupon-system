@@ -37,7 +37,7 @@ public class Merchants {
     //商户营业执照
     @Basic
     @Column(name = "business_license_url", nullable = false)
-    private String buinessLicenseUrl;
+    private String businessLicenseUrl;
 
     @Basic
     @Column(name = "phone", nullable = false)

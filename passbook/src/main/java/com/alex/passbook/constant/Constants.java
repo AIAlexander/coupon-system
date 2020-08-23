@@ -11,7 +11,7 @@ public class Constants {
     public static final String TEMPLATE_TOPIC = "merchants-template";
 
     //token文件存储目录
-    public static final String TOKEN_DIR = "/tmp/token";
+    public static final String TOKEN_DIR = "/tmp/token/";
 
     //已使用的token文件后缀
     public static final String USED_TOKEN_SUFFIX = "_";

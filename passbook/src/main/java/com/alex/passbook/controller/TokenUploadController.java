@@ -39,6 +39,8 @@ public class TokenUploadController {
         return "upload";
     }
 
+    //4a7654f84800e33b8529932f2518a1d3 rowkey
+    //MerchantsId： 20
     @PostMapping("/token")
     public String tokenUpload(@RequestParam("merchantsId") String merchantsId,
                               @RequestParam("passTemplateId") String passTemplateId,
